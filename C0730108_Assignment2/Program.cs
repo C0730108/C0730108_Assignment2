@@ -23,8 +23,9 @@ namespace C0730108_Assignment2
         {
             int Method1(out int i)
             {
-                System.Console.WriteLine("Method1");
-                i = 10;
+                
+                i = 100;
+                System.Console.WriteLine("Method1" + i);
                 return 0;
             }
 
@@ -34,7 +35,7 @@ namespace C0730108_Assignment2
 
 
                 MyDelegate myDelegate = new MyDelegate(Method1);
-                MyDelegate myDelegat1 = new MyDelegate(Method1);
+                MyDelegate myDelegat1 = null;
                 MyDelegate myDelegate2 = myDelegate + myDelegat1;
                 int intValue;
                 myDelegate2(out intValue);
