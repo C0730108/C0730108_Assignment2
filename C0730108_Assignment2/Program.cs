@@ -6,29 +6,41 @@ using System.Threading.Tasks;
 
 namespace C0730108_Assignment2
 {
+    using System;
+    delegate void ExampleDelegate(String xyz);
     class Program
     {
-        static void Main(string[] args)
+      
+
+
+  public static void Method1(string xyz)
         {
-            //Student Name Jashandeep kaur kingra(co730108)
-            //student Name Ramandeep kaur(c0722414)
-            //Assignment2
-            //March 7,2019
-       
+            Console.WriteLine(xyz + "Method1");
+        }  
+        public static void Method2(string xyz)
+        {
+            Console.WriteLine(xyz + "Method2");
         }
 
-    } 
-
-    
-    public delegate void MyDelegate();
-    public class DelegateExercises   
-    {
-        void Method3()  
-       
+        public static void Main()
        
         {
-           
-            System.Console.WriteLine(MyDelegate.ToString());
+
+            ExampleDelegate ex1Delegate, ex2Delegate, ex3Delegate, myDelegate;
+
+            ex1Delegate = new ExampleDelegate(Method1);
+            ex2Delegate = new ExampleDelegate(Method2);
+            ex3Delegate = ex1Delegate + ex2Delegate ;
+            myDelegate = ex1Delegate - ex2Delegate;
+            ex1Delegate("AAA");
+            ex1Delegate("BBB");
+            ex1Delegate("CCC");
+            ex1Delegate("DDD");
+            myDelegate = ex3Delegate - ex1Delegate;
+            ex1Delegate("EEE");
+            myDelegate = ex3Delegate - ex2Delegate;
+            ex1Delegate("FFF");
+            Console.ReadLine();
         }
     }
 }
