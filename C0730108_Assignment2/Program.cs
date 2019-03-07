@@ -14,37 +14,17 @@ namespace C0730108_Assignment2
             //student Name Ramandeep kaur(c0722414)
             //Assignment2
             //March 7,2019
-            DelegateExercises a = new DelegateExercises();
-            a.Method3();
-            Console.WriteLine();
-            
+
         }
-    }  
+
+    } 
+
+    
     public delegate void MyDelegate();
-    public class DelegateExercises
+    public class DelegateExercises : MyDelegate   
     {
-        
-        void Method1()
-        
-           
-
-            {
-                System.Console.WriteLine("Method1");
-            }
-            
-            
-
-
-        public void Method3()
-        {
-            MyDelegate myDelegate = new MyDelegate(Method1);
-            myDelegate();
-        
-
-
-
-
-
-        }
     }
 }
+        
+    
+
