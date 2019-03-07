@@ -19,33 +19,27 @@ namespace C0730108_Assignment2
             Console.WriteLine();
             
         }
-    }
+    }  
+    public delegate void MyDelegate();
     public class DelegateExercises
     {
-        public delegate int MyDelegate(int intValue);
-        int Method1(int intMethod1)
-        {
-            return intMethod1 * 4;
+        
+        void Method1()
+        
+           
 
-
-        }
-        int Method2(int intMethod1)
-        {
-            return intMethod1 * 20;
-        }
-        public void Method4(MyDelegate myDelegate)   
-        {
-            for (int i=1; i<=5; i++)
-           System.Console.WriteLine(myDelegate(i) + " ");
-        }    
+            {
+                System.Console.WriteLine("Method1");
+            }
+            
+            
 
 
         public void Method3()
         {
             MyDelegate myDelegate = new MyDelegate(Method1);
-            Method4(myDelegate);
-            myDelegate = new MyDelegate(Method2);
-            Method4(myDelegate);
+            myDelegate();
+        
 
 
 
