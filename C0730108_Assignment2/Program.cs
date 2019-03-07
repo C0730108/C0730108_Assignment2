@@ -15,17 +15,24 @@ namespace C0730108_Assignment2
         public static void Main()
         {
             DelegateExercises delegateExercises = new DelegateExercises();
-            delegateExercises.Method3();
-            Console.ReadLine();
+            try
+            {
+                delegateExercises.Method3();
+                Console.ReadLine();
+            }
+            catch(System.Exception ex)
+            {
+                System.Console.WriteLine("Exception occured");
+                Console.ReadLine();
+            }
         }
-        public delegate void MyDelegate(ref int intValue);
+        public delegate void MyDelegate();
         public class DelegateExercises
         {
-            void Method1(ref int intValue)
+            void Method1()
             {
 
-                intValue = intValue + 5;
-                System.Console.WriteLine("Method1 " + intValue);
+                throw new System.Exception();
             }
 
             public void Method3()
@@ -34,10 +41,8 @@ namespace C0730108_Assignment2
 
 
                 MyDelegate myDelegate = new MyDelegate(Method1);
-                MyDelegate myDelegat1 = new MyDelegate(Method1);
-                MyDelegate myDelegate2 = myDelegate + myDelegat1;
-                int intParameter = 5;
-                myDelegate2(ref intParameter);
+               
+                myDelegate();
 
 
             }
